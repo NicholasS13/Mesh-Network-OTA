@@ -4,10 +4,10 @@
 #include "WiFi.h"
 #include "painlessMesh.h"
 
-#define Wifi_SSID "DESKTOP-G9U7TU3"
-#define Wifi_PASSWORD "24C/b851"
+#define Wifi_SSID "WIFINAMEHERE"
+#define Wifi_PASSWORD "PASSWORDHERE"
 //OTA update setup
-static const char *url = "http://10.203.132.147:8000/MESHOTAFINAL.ino.adafruit_feather_esp32s3.bin"; //state url of your firmware image
+static const char *url = "http://IP_ADDRESS_HERE:8000/MESHOTAFINAL.ino.adafruit_feather_esp32s3.bin"; //state url of your firmware image
 static const char *server_certificate = "";
 static HttpsOTAStatus_t otastatus;
 
