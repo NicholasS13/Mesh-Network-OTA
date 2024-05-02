@@ -4,16 +4,16 @@
 #include "WiFi.h"
 #include "painlessMesh.h"
 
-#define Wifi_SSID "DESKTOP-G9U7TU3"
-#define Wifi_PASSWORD "24C/b851"
+#define Wifi_SSID "WIFI NAME HERE"
+#define Wifi_PASSWORD "WIFI PASSWORD HERE"
 //OTA update setup
-static const char *url = "http://10.203.132.147:8000/updateOff.bin"; //state url of your firmware image
+static const char *url = "http://IP_HERE:8000/updateOff.bin"; //state url of your firmware image
 static const char *server_certificate = "";
 static HttpsOTAStatus_t otastatus;
 
 
 
-#define   MESH_PREFIX     "whateverYouLike"
+#define   MESH_PREFIX     "whateverYouLike"//this can be anything but whatever you edit here, all devices will need to have that change
 #define   MESH_PASSWORD   "somethingSneaky"
 #define   MESH_PORT       5555
 
@@ -89,14 +89,14 @@ void setup() {
   task = preferences.getUInt("task",0);//defaults to 0 if task variable not found
   if (task==1){
     
-    pixels.setPixelColor(0, pixels.Color(255,0,255));
+    pixels.setPixelColor(0, pixels.Color(255,0,255)); // display magenta to show in update mode
     pixels.show();
     HttpsOTA.onHttpEvent(HttpEvent);
     WiFi.begin(Wifi_SSID, Wifi_PASSWORD);
     
   }else{
     
-    pixels.setPixelColor(0, pixels.Color(255,0,0));
+    pixels.setPixelColor(0, pixels.Color(255,0,0));//display red to show in mesh mode
     pixels.show();
     mesh.setDebugMsgTypes( ERROR | STARTUP );  // set before init() so that you can see startup messages
   
@@ -117,7 +117,7 @@ void otaStuff(){
       //tell mesh network update available
       Serial.println("Firmware written successfully. To reboot device, call API ESP.restart() or PUSH restart button on device");
       pixels.clear();
-      pixels.setPixelColor(0, pixels.Color(0, 255, 0));//Pink to show successful update
+      pixels.setPixelColor(0, pixels.Color(0, 255, 0));//Green to show successful update
       pixels.show();
       preferences.putUInt("task",0);
       preferences.end();
@@ -126,7 +126,7 @@ void otaStuff(){
   } else if(otastatus == HTTPS_OTA_FAIL) { 
       Serial.println("Firmware Upgrade Fail");
       pixels.clear();
-      pixels.setPixelColor(0, pixels.Color(255, 0, 0));//Pink to show successful update
+      pixels.setPixelColor(0, pixels.Color(255, 0, 0));//Red to show unsuccessful update
       pixels.show();
   }
   if(notRun){
