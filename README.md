@@ -12,7 +12,7 @@
   + After the edits are made upload this file to 2 or more ESP32-S3 Feather devices
   +  Export this code as a compiled binary file
   +  Send the code to the webserver or self host it
-    + You can self host the code by opening file directory in a command prompt and run the command ```python3 http.server```
+      + You can self host the code by opening file directory in a command prompt and run the command ```python3 http.server```
   + once uploaded to multiple devices and started hosting the code you can now run the program
   + To run the program plug in all the esp32s
   + The LEDS will start with a red color to indicate that the devices are in the mesh network mode
