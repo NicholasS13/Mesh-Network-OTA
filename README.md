@@ -11,9 +11,10 @@
     + Replace the port number with the port you will be using (if applicable)
   + After the edits are made upload this file to 2 or more ESP32-S3 Feather devices
   +  Export this code as a compiled binary file
-  +  Send the code to the webserver or self host it
-      + You can self host the code by opening file directory in a command prompt and run the command ```python3 http.server```
-  + once uploaded to multiple devices and started hosting the code you can now run the program
+    + This compiled binary is the update, so after this test demo is completed, this would be the file you make the changes to before telling the devices to fetch the new update
+  +  Send the compiled binary file to the webserver or self host it
+      + You can self host the compiled binary file by opening file directory (usually the arduino project directory) in a command prompt and run the command ```python3 http.server```
+  + once you uploaded the code to multiple devices and started hosting the binary file you can now run the program
   + To run the program plug in all the esp32s
   + The LEDS will start with a red color to indicate that the devices are in the mesh network mode
     + if it starts out with a magenta that means it is getting an update, you can either allow the device to get the update or upload this sketch to put it into Mesh Mode
