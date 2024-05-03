@@ -10,6 +10,8 @@
       + If the new code is on a different webserver/website replace the entire url with that web address  
     + Replace the port number with the port you will be using (if applicable)
   + After the edits are made upload this file to 2 or more ESP32-S3 Feather devices
+    + This code is compatable with other ESP32 models, would have to remove LED functionality or change LED library for appropriate devices
+      + EX: ESP32 S2 Dev Module does not have a multicolor LED, so would have to remove multicolor LED functionality and replace it with serial monitor or blinks  
   +  Export this code as a compiled binary file
     + This compiled binary is the update, so after this test demo is completed, this would be the file you make the changes to before telling the devices to fetch the new update
   +  Send the compiled binary file to the webserver or self host it
