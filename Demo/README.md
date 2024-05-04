@@ -9,4 +9,4 @@ This demo has an LED and a button connected to the ESP32S3 feathers. For this ex
   +  '3' : turn the LED on for node2
   +  '4' : turn the LED off for node2
   +  'O' : tells the mesh network that a wireless update is ready (O for OTA)
-#### Additionally the buttons on the breadboard each make the builtin LED for the communicator device change color depending on which button is being pressed (button from node1 or node2)
+#### Additionally the buttons on the breadboard each make the builtin LED for the communicator device change color depending on which button is being pressed (button from node1 or node2). And when the button on node1 is pressed, the builtin LED turns red on node1 and the led attached to node2 turns on (that is why LEDS turn red at end of demo)
