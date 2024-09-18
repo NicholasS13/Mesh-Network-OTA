@@ -5,10 +5,10 @@
 #include <Preferences.h>
 #include "painlessMesh.h"
 
-#define Wifi_SSID "DESKTOP-GLO6DFB 4172"
-#define Wifi_PASSWORD "password"
+#define Wifi_SSID "INSERT WIFI NAME"
+#define Wifi_PASSWORD "INSERT WIFI PASSWORD"
 //OTA update setup
-static const char *url = "http://192.168.137.1:8000/blink.ino.bin"; //state url of your firmware image
+static const char *url = "http://{IPHERE}:8000/blink.ino.bin"; //state url of your firmware image
 static const char *server_certificate = "";
 static HttpsOTAStatus_t otastatus;
 
